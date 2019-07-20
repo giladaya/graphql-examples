@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gilad Dayagi",
@@ -12,5 +12,8 @@
   "dependencies": {
     "apollo-server": "^2.7.0",
     "graphql": "^14.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
