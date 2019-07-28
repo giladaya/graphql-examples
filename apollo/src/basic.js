@@ -3,13 +3,20 @@ const { fetchUsers, fetchUserById } = require("./sampleData");
 
 const typeDefs = gql`
   type Query {
-    foo: String
+    user(id: ID!): User
+  }
+  type User {
+    id: ID!
+    name: String
+    age: Int
   }
 `;
 
 const resolvers = {
   Query: {
-    foo: () => 'Hello'
+    user: (root, args, context, info) => {
+      return fetchUserById(args.id);
+    }
   }
 };
 

@@ -6,6 +6,7 @@ npm start
 ```
 
 ## Changes
+- Add `user` query
 - Add `users` query
 - Add `User.age` resolver
 - Add `createUser` mutation
