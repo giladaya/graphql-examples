@@ -34,6 +34,12 @@ const UserType = new GraphQLObjectType({
     },
     age: { 
       type: GraphQLInt,
+      // `resolve` is not needed here: graphql-js infers the returned value.
+      // Remove the comments to see that it's called when the query contains the `name` field.
+      // resolve: (root, args, context, info) => {
+      //   console.log(`Resolver called: user.age`)
+      //   return root.age
+      // }
     }
   }
 })
