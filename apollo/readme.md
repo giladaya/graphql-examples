@@ -9,8 +9,8 @@ npm start
 - Add `user` query
 - Add `users` query
 - Add `User.age` resolver
-- Add `createUser` mutation
 - Add `friends` query
+- Add `createUser` mutation
 
 ## Queries
 query {
