@@ -5,8 +5,12 @@ const typeDefs = gql`
   type Query {
     user(id: ID!): User
   }
+  "A user!!"
   type User {
     id: ID!
+    """
+    User name 8*)
+    """
     name: String
     age: Int
   }
