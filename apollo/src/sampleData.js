@@ -7,58 +7,59 @@ const users = [
     id: "aaa",
     name: "Alice",
     age: 16,
-    friends: ["bbb", "ccc"]
+    friends: ["bbb", "ccc"],
   },
   {
     id: "bbb",
     name: "Bob",
     age: 17,
-    friends: ["aaa"]
+    friends: ["aaa"],
   },
   {
     id: "ccc",
     name: "Charlie",
     age: 18,
-    friends: ["aaa", "ddd"]
+    friends: ["aaa", "ddd"],
   },
   {
     id: "ddd",
     name: "Dave",
     age: 19,
-    friends: ["ccc"]
+    friends: ["ccc"],
   },
   {
     id: "eee",
     name: "Erin",
     age: 20,
-    friends: []
+    friends: [],
   },
   {
     id: "fff",
     name: "Frank",
     age: 21,
-    friends: []
-  }
+    friends: [],
+  },
 ];
 
 function fetchUsers() {
   return users;
 }
 function fetchUserById(id) {
-  return users.find(user => user.id === id);
+  return users.find((user) => user.id === id);
 }
 function createUser(name, age) {
   const newId = Date.now();
   const newUser = {
     id: newId.toString(),
     name,
-    age
+    age,
   };
   users.push(newUser);
   return newUser;
 }
+
 module.exports = {
   fetchUsers,
   fetchUserById,
-  createUser
+  createUser,
 };

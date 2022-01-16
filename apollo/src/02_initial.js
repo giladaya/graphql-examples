@@ -20,8 +20,8 @@ const resolvers = {
   Query: {
     user: (root, args, context, info) => {
       return fetchUserById(args.id);
-    }
-  }
+    },
+  },
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });

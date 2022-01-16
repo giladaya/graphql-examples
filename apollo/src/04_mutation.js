@@ -22,29 +22,29 @@ const resolvers = {
     users: () => fetchUsers(),
     user: (root, args, context, info) => {
       return fetchUserById(args.id);
-    }
+    },
   },
   Mutation: {
     createUser: (root, args, context, info) => {
       console.log(args);
-      const {name, age} = args
+      const { name, age } = args;
       const record = createUser(name, age);
       return record;
-    }
+    },
   },
   User: {
     friends: (root, args, context, info) => {
-      return root.friends.map(id => fetchUserById(id));
-    }
-  }
+      return root.friends.map((id) => fetchUserById(id));
+    },
+  },
 };
 
 // The context object is shared across all resolvers
 const context = ({ req }) => ({
-  world: 'earth',
+  world: "earth",
   // user: getUser(req.headers.authorization),
   // db: getConnection(),
-}),
+});
 
 const server = new ApolloServer({ typeDefs, resolvers, context });
 

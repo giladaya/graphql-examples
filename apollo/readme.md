@@ -13,6 +13,7 @@ npm start
 - Add `createUser` mutation
 
 ## Queries
+```gql
 query {
   foo
 }
@@ -35,3 +36,4 @@ mutation {
     age
   }
 }
+```
