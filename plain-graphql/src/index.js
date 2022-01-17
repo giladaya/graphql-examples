@@ -40,8 +40,8 @@ const UserType = new GraphQLObjectType({
       //   console.log(`Resolver called: user.age`)
       //   return root.age
       // }
-    }
-  }
+    },
+  },
 });
 
 const schema = new GraphQLSchema({
@@ -51,15 +51,15 @@ const schema = new GraphQLSchema({
       user: {
         type: UserType,
         args: {
-          id: { type: GraphQLID }
+          id: { type: GraphQLID },
         },
         resolve: (root, args, context, info) => {
           console.log(`Resolver called: user`);
           return fetchUserById(args.id);
-        }
-      }
+        },
+      },
     },
-  })
+  }),
 });
 
 // Create and print SDL-representation of schema
@@ -91,7 +91,7 @@ if (errors.length === 0) {
 // https://graphql.org/graphql-js/execution/#execute
 console.log(`\nEXECUTION\n---------`);
 execute(schema, queryAST)
-  .then(result => {
+  .then((result) => {
     console.log(`\nResult: \n${JSON.stringify(result)}`);
   })
-  .catch(e => console.log(`\nError: \n${JSON.stringify(e)}`));
+  .catch((e) => console.log(`\nError: \n${JSON.stringify(e)}`));
